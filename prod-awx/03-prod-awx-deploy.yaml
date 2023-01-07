@@ -1,0 +1,16 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX 
+metadata: 
+  name: dev-awx-demo
+  namespace: dev-awx
+spec:
+  admin_user: admin 
+  admin_password_secret: dev-awx-admin-password
+  service_type: nodeport 
+  nodeport_port: 30081
+  postgres_storage_requirements:
+    requests:
+      storage: 4Gi
+    limits: 
+      storage: 5Gi
